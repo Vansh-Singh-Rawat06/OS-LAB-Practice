@@ -57,3 +57,4 @@ int main() {
     printf("\nAverage Waiting Time : %.2f", AVGWT);
     return 0;
 }
+
