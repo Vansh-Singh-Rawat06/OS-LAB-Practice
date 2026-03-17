@@ -8,6 +8,7 @@ int main()
     
     float avg_tat=0, avg_wt=0;
     int current_time = 0;
+    printf("usn:1bf24cs330\n");
 
     printf("Enter number of processes: ");
     scanf("%d",&n);
@@ -27,7 +28,6 @@ int main()
         scanf("%d",&type[i]);
     }
 
-    
     for(i=0;i<n-1;i++)
     {
         for(j=i+1;j<n;j++)
@@ -35,7 +35,7 @@ int main()
             if(at[i] > at[j])
             {
                 int temp;
-                
+
                 temp=at[i]; at[i]=at[j]; at[j]=temp;
                 temp=bt[i]; bt[i]=bt[j]; bt[j]=temp;
                 temp=pid[i]; pid[i]=pid[j]; pid[j]=temp;
@@ -44,7 +44,6 @@ int main()
         }
     }
 
-    
     for(i=0;i<n;i++)
     {
         if(type[i]==1)
@@ -60,7 +59,7 @@ int main()
         }
     }
 
-   
+    
     for(i=0;i<n;i++)
     {
         if(type[i]==2)
@@ -87,11 +86,11 @@ int main()
         avg_wt += wt[i];
     }
 
-    avg_tat = avg_tat / n;
-    avg_wt = avg_wt / n;
+    avg_tat /= n;
+    avg_wt /= n;
 
-    printf("\nAverage Turnaround Time = %.2f",avg_tat);
-    printf("\nAverage Waiting Time = %.2f",avg_wt);
+    printf("\nAverage Turnaround Time = %.2f", avg_tat);
+    printf("\nAverage Waiting Time = %.2f\n", avg_wt);
 
     return 0;
 }
