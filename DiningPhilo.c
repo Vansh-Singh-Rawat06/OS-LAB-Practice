@@ -18,11 +18,11 @@ void *philosopher(void *arg)
 
         printf("Philosopher %d is hungry\n", id);
 
-        // Pick up left fork
+        
         sem_wait(&fork_sem[id]);
         printf("Philosopher %d picked up left fork %d\n", id, id);
 
-        // Pick up right fork
+        
         sem_wait(&fork_sem[(id + 1) % N]);
         printf("Philosopher %d picked up right fork %d\n",
                id, (id + 1) % N);
@@ -30,10 +30,10 @@ void *philosopher(void *arg)
         printf("Philosopher %d is eating\n", id);
         sleep(2);
 
-        // Put down right fork
+        
         sem_post(&fork_sem[(id + 1) % N]);
 
-        // Put down left fork
+        
         sem_post(&fork_sem[id]);
 
         printf("Philosopher %d released both forks\n", id);
